@@ -48,7 +48,7 @@ app.post("/api/persons", (req, res) => {
       res.status(400);
       res.json({ error: "name must be unique" });
     } else {
-      let person = { ...body, id: Math.random() };
+      let person = { ...body, id: String(Math.random()) };
       persons.push(person);
       res.json(person);
     }
